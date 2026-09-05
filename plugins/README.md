@@ -149,55 +149,13 @@
 
 • <code>/start</code> — 🚀 sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ & ᴏᴘᴇɴ ғɪʟᴇ ʟɪɴᴋs
 
-• <code>/credit</code> — 💳 ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄʀᴇᴅɪᴛ ʙᴀʟᴀɴᴄᴇ
+• <code>/profile</code> — 👤 ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ & ᴘʟᴀɴ ɪɴғᴏʀᴍᴀᴛɪᴏɴ
 
----
+• <code>/request</code> — 📩 sᴇɴᴅ ᴀ ᴄᴏɴᴛᴇɴᴛ ʀᴇǫᴜᴇsᴛ <b>(ᴘʀᴇᴍɪᴜᴍ)</b>
 
-### 💳 ᴄʀᴇᴅɪᴛ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+• <code>/credit</code> — 💳 ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄʀᴇᴅɪᴛ ʙᴀʟᴀɴᴄᴇ
 
-• <code>/credit_settings</code> — 🎛️ ᴏᴘᴇɴ ᴄʀᴇᴅɪᴛ & sʜᴏʀᴛᴇɴᴇʀ sᴇᴛᴛɪɴɢs
-
-• <code>/add_credit USER_ID AMOUNT</code> — ➕ ᴀᴅᴅ ᴄʀᴇᴅɪᴛs ᴛᴏ ᴀ ᴜsᴇʀ
-
-• <code>/rem_credit USER_ID AMOUNT</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴄʀᴇᴅɪᴛs ғʀᴏᴍ ᴀ ᴜsᴇʀ
-
-• <code>/lmt_credit AMOUNT</code> — 🎁 sᴇᴛ ᴄʀᴇᴅɪᴛ ʀᴇᴡᴀʀᴅ ᴀᴍᴏᴜɴᴛ
-
-• <code>/user_credit USER_ID</code> — 👤 ᴠɪᴇᴡ ᴀ ᴜsᴇʀ's ᴄʀᴇᴅɪᴛ ɪɴғᴏ
-
-• <code>/credit_stats</code> — 📊 ᴠɪᴇᴡ ᴄʀᴇᴅɪᴛ sᴛᴀᴛɪsᴛɪᴄs
-
-• <code>/free</code> — 🟢 ᴅɪsᴀʙʟᴇ ᴄʀᴇᴅɪᴛ / ɢᴀᴛᴇ sʏsᴛᴇᴍ
-
-• <code>/paid</code> — 🔴 ᴇɴᴀʙʟᴇ ᴄʀᴇᴅɪᴛ / ɢᴀᴛᴇ sʏsᴛᴇᴍ
-
----
-
-### 👑 ᴘʀᴇᴍɪᴜᴍ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
-
-• <code>/add_premium USER_ID</code> — 👑 ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ
-
-• <code>/rem_premium_user USER_ID</code> — ❌ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ
-
-• <code>/list_premium</code> — 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs
-
----
-
-### 🔗 sʜᴏʀᴛᴇɴᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
-
-• <code>/add_shortener</code> — ➕ ᴀᴅᴅ ᴀ ɴᴇᴡ sʜᴏʀᴛᴇɴᴇʀ
-
-• <code>/rem_shortener ID</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀ sʜᴏʀᴛᴇɴᴇʀ
-
-• <code>/toggle_shortener ID</code> — 🔄 ᴇɴᴀʙʟᴇ / ᴅɪsᴀʙʟᴇ sʜᴏʀᴛᴇɴᴇʀ
-
-• <code>/list_shorteners</code> — 📋 ᴠɪᴇᴡ ᴄᴏɴғɪɢᴜʀᴇᴅ sʜᴏʀᴛᴇɴᴇʀs
-
-• <code>/set_expiry</code> — ⏳ ᴄᴏɴғɪɢᴜʀᴇ ᴄʟᴀɪᴍ ᴇxᴘɪʀʏ
-
-• <code>/set_min_time</code> — ⏱ ᴄᴏɴғɪɢᴜʀᴇ ᴍɪɴɪᴍᴜᴍ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
-
-• <code>/set_tutorial</code> — 📚 sᴇᴛ ᴛᴜᴛᴏʀɪᴀʟ ʟɪɴᴋ
+• <code>/commands</code> — 📜 ᴠɪᴇᴡ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs
 
 ---
 
@@ -211,37 +169,73 @@
 
 ---
 
-### 📢 ʙʀᴏᴀᴅᴄᴀsᴛ
+### 💳 ᴄʀᴇᴅɪᴛ & ᴀᴄᴄᴇꜱꜱ ꜱʏꜱᴛᴇᴍ
 
-• <code>/broadcast</code> — 📣 sᴇɴᴅ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs
+• <code>/credit_settings</code> — 🎛️ ᴏᴘᴇɴ ᴀᴄᴄᴇꜱꜱ & ᴄʀᴇᴅɪᴛ ꜱᴇᴛᴛɪɴɢꜱ
 
-• <code>/pbroadcast</code> — 📌 ʙʀᴏᴀᴅᴄᴀsᴛ & ᴘɪɴ ᴍᴇssᴀɢᴇ
+• <code>/add_credit USER_ID AMOUNT</code> — ➕ ᴀᴅᴅ ᴄʀᴇᴅɪᴛꜱ
 
----
+• <code>/rem_credit USER_ID AMOUNT</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴄʀᴇᴅɪᴛꜱ
 
-### 👥 ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs
+• <code>/user_credit USER_ID</code> — 👤 ᴄʜᴇᴄᴋ ᴀ ᴜꜱᴇʀ'ꜱ ᴄʀᴇᴅɪᴛꜱ
 
-• <code>/users</code> — 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜsᴇʀs
-
-• <code>/stats</code> — 📊 ᴠɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs
+• <code>/credit_stats</code> — 📊 ᴠɪᴇᴡ ᴄʀᴇᴅɪᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
 
 ---
 
-### 🚫 ᴜsᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+### 👑 ᴘʀᴇᴍɪᴜᴍ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
 
-• <code>/ban</code> — 🚫 ʙᴀɴ ᴀ ᴜsᴇʀ
+• <code>/add_premium USER_ID</code> — 👑 ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
 
-• <code>/unban</code> — ✅ ᴜɴʙᴀɴ ᴀ ᴜsᴇʀ
+• <code>/rem_premium_user USER_ID</code> — ❌ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
+
+• <code>/list_premium</code> — 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ
 
 ---
 
-### 📢 ғᴏʀᴄᴇ sᴜʙsᴄʀɪᴘᴛɪᴏɴ
+### 🔗 ꜱʜᴏʀᴛᴇɴᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
 
-• <code>/addchnl</code> — ➕ ᴀᴅᴅ ғᴏʀᴄᴇ-sᴜʙ ᴄʜᴀɴɴᴇʟ
+• <code>/add_shortener</code> — ➕ ᴀᴅᴅ ᴀ ꜱʜᴏʀᴛᴇɴᴇʀ
 
-• <code>/delchnl</code> — ➖ ʀᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ-sᴜʙ ᴄʜᴀɴɴᴇʟ
+• <code>/rem_shortener ID</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀ ꜱʜᴏʀᴛᴇɴᴇʀ
 
-• <code>/listchnl</code> — 📋 ᴠɪᴇᴡ ғᴏʀᴄᴇ-sᴜʙ ᴄʜᴀɴɴᴇʟs
+• <code>/toggle_shortener ID</code> — 🔄 ᴇɴᴀʙʟᴇ / ᴅɪꜱᴀʙʟᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
+
+• <code>/list_shorteners</code> — 📋 ᴠɪᴇᴡ ᴀᴄᴛɪᴠᴇ ꜱʜᴏʀᴛᴇɴᴇʀꜱ
+
+---
+
+### 📢 ʙʀᴏᴀᴅᴄᴀꜱᴛ
+
+• <code>/broadcast</code> — 📣 ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜꜱᴇʀꜱ
+
+• <code>/pbroadcast</code> — 📌 ʙʀᴏᴀᴅᴄᴀꜱᴛ & ᴘɪɴ ᴍᴇꜱꜱᴀɢᴇ
+
+---
+
+### 👥 ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
+
+• <code>/users</code> — 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ
+
+• <code>/stats</code> — 📊 ᴠɪᴇᴡ ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
+
+---
+
+### 🚫 ᴜꜱᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+
+• <code>/ban</code> — 🚫 ʙᴀɴ ᴀ ᴜꜱᴇʀ
+
+• <code>/unban</code> — ✅ ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ
+
+---
+
+### 📢 ғᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+
+• <code>/addchnl</code> — ➕ ᴀᴅᴅ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟ
+
+• <code>/delchnl</code> — ➖ ʀᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟ
+
+• <code>/listchnl</code> — 📋 ᴠɪᴇᴡ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟꜱ
 
 ---
 
@@ -251,9 +245,9 @@
 
 • <code>/deladmin</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀɴ ᴀᴅᴍɪɴ
 
-• <code>/admins</code> — 👮 ᴠɪᴇᴡ ʙᴏᴛ ᴀᴅᴍɪɴs
+• <code>/admins</code> — 👮 ᴠɪᴇᴡ ʙᴏᴛ ᴀᴅᴍɪɴꜱ
 
----
+</details>
 
 ### ⚙️ ᴏᴛʜᴇʀ
 
@@ -294,51 +288,47 @@
 <br><br>
 
 <pre>
-start - Start the bot
-credit - Check your credit balance
-commands - View available commands
+start - 🚀 ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
+profile - 👤 ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ
+request - 📩 ꜱᴇɴᴅ ᴀ ᴄᴏɴᴛᴇɴᴛ ʀᴇǫᴜᴇꜱᴛ
+credit - 💳 ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
+commands - 📜 ᴠɪᴇᴡ ᴄᴏᴍᴍᴀɴᴅꜱ
 
-batch - Create batch file links
-genlink - Generate a file link
-nbatch - Create multiple file links
+batch - 📦 ᴄʀᴇᴀᴛᴇ ʙᴀᴛᴄʜ ʟɪɴᴋꜱ
+genlink - 🔗 ɢᴇɴᴇʀᴀᴛᴇ ғɪʟᴇ ʟɪɴᴋ
+nbatch - 📁 ᴄʀᴇᴀᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ʟɪɴᴋꜱ
 
-credit_settings - Open credit settings
-add_credit - Add credits to a user
-rem_credit - Remove user credits
-lmt_credit - Set credit reward amount
-user_credit - Check user credit information
-credit_stats - View credit statistics
-free - Disable credit system
-paid - Enable credit system
+credit_settings - 🎛️ ᴏᴘᴇɴ ᴄʀᴇᴅɪᴛ ꜱᴇᴛᴛɪɴɢꜱ
+add_credit - ➕ ᴀᴅᴅ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
+rem_credit - ➖ ʀᴇᴍᴏᴠᴇ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
+user_credit - 👤 ᴄʜᴇᴄᴋ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
+credit_stats - 📊 ᴄʀᴇᴅɪᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
 
-add_premium - Add premium user
-rem_premium_user - Remove premium user
-list_premium - View premium users
+add_premium - 👑 ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
+rem_premium_user - ❌ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ
+list_premium - 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ
 
-add_shortener - Add a new shortener
-rem_shortener - Remove a shortener
-toggle_shortener - Enable or disable shortener
-list_shorteners - View configured shorteners
-set_expiry - Set claim expiry
-set_min_time - Set verification time
-set_tutorial - Set tutorial link
+add_shortener - ➕ ᴀᴅᴅ ꜱʜᴏʀᴛᴇɴᴇʀ
+rem_shortener - ➖ ʀᴇᴍᴏᴠᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
+toggle_shortener - 🔄 ᴛᴏɢɢʟᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
+list_shorteners - 📋 ᴠɪᴇᴡ ꜱʜᴏʀᴛᴇɴᴇʀꜱ
 
-broadcast - Broadcast message
-pbroadcast - Broadcast and pin message
+broadcast - 📣 ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴍᴇꜱꜱᴀɢᴇ
+pbroadcast - 📌 ʙʀᴏᴀᴅᴄᴀꜱᴛ & ᴘɪɴ
 
-users - View total users
-stats - View bot statistics
+users - 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ
+stats - 📊 ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
 
-ban - Ban a user
-unban - Unban a user
+ban - 🚫 ʙᴀɴ ᴀ ᴜꜱᴇʀ
+unban - ✅ ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ
 
-addchnl - Add force subscription channel
-delchnl - Remove force subscription channel
-listchnl - View force subscription channels
+addchnl - ➕ ᴀᴅᴅ ғᴏʀᴄᴇ ꜱᴜʙ
+delchnl - ➖ ʀᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ ꜱᴜʙ
+listchnl - 📋 ᴠɪᴇᴡ ғᴏʀᴄᴇ ꜱᴜʙꜱ
 
-add_admin - Add new admin
-deladmin - Remove an admin
-admins - View bot admins
+add_admin - ➕ ᴀᴅᴅ ᴀᴅᴍɪɴ
+deladmin - ➖ ʀᴇᴍᴏᴠᴇ ᴀᴅᴍɪɴ
+admins - 👮 ᴠɪᴇᴡ ᴀᴅᴍɪɴꜱ
 </pre>
 
 <br>
