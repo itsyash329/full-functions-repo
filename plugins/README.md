@@ -139,7 +139,6 @@
 </details>
 
 ━━━━━━━━━━━━━━━━━━━━
-
 <details>
 <summary><b>📜 ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs</b></summary>
 
@@ -147,111 +146,101 @@
 
 ### 👤 ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs
 
-• <code>/start</code> — 🚀 sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ & ᴏᴘᴇɴ ғɪʟᴇ ʟɪɴᴋs
+• <code>/start</code> — 🚀 sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
 
-• <code>/profile</code> — 👤 ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ & ᴘʟᴀɴ ɪɴғᴏʀᴍᴀᴛɪᴏɴ
+• <code>/request</code> — 📩 sᴇɴᴅ ᴀ ᴄᴏɴᴛᴇɴᴛ ʀᴇǫᴜᴇsᴛ
 
-• <code>/request</code> — 📩 sᴇɴᴅ ᴀ ᴄᴏɴᴛᴇɴᴛ ʀᴇǫᴜᴇsᴛ <b>(ᴘʀᴇᴍɪᴜᴍ)</b>
-
-• <code>/credit</code> — 💳 ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄʀᴇᴅɪᴛ ʙᴀʟᴀɴᴄᴇ
-
-• <code>/commands</code> — 📜 ᴠɪᴇᴡ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs
+• <code>/profile</code> — 👤 ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ
 
 ---
 
-### 📁 ғɪʟᴇ sᴛᴏʀᴇ
-
-• <code>/batch</code> — 📦 ᴄʀᴇᴀᴛᴇ ʙᴀᴛᴄʜ ғɪʟᴇ ʟɪɴᴋs
+### 📁 ғɪʟᴇ ʟɪɴᴋs
 
 • <code>/genlink</code> — 🔗 ɢᴇɴᴇʀᴀᴛᴇ ᴀ ғɪʟᴇ ʟɪɴᴋ
+
+• <code>/batch</code> — 📦 ᴄʀᴇᴀᴛᴇ ʙᴀᴛᴄʜ ғɪʟᴇ ʟɪɴᴋs
 
 • <code>/nbatch</code> — 📁 ᴄʀᴇᴀᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ғɪʟᴇ ʟɪɴᴋs
 
 ---
 
-### 💳 ᴄʀᴇᴅɪᴛ & ᴀᴄᴄᴇꜱꜱ ꜱʏꜱᴛᴇᴍ
+### 🎛️ ᴀᴄᴄᴇss sʏsᴛᴇᴍ
 
-• <code>/credit_settings</code> — 🎛️ ᴏᴘᴇɴ ᴀᴄᴄᴇꜱꜱ & ᴄʀᴇᴅɪᴛ ꜱᴇᴛᴛɪɴɢꜱ
+• <code>/panel</code> — 🎛️ ᴏᴘᴇɴ ᴀᴄᴄᴇss sʏsᴛᴇᴍ ᴘᴀɴᴇʟ
 
-• <code>/add_credit USER_ID AMOUNT</code> — ➕ ᴀᴅᴅ ᴄʀᴇᴅɪᴛꜱ
+• <code>/credit_panel</code> — 💳 ᴏᴘᴇɴ ᴄʀᴇᴅɪᴛ ᴘᴀɴᴇʟ
 
-• <code>/rem_credit USER_ID AMOUNT</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴄʀᴇᴅɪᴛꜱ
+• <code>/credit_status</code> — 💳 ᴄʜᴇᴄᴋ ᴄʀᴇᴅɪᴛ sᴛᴀᴛᴜs
 
-• <code>/user_credit USER_ID</code> — 👤 ᴄʜᴇᴄᴋ ᴀ ᴜꜱᴇʀ'ꜱ ᴄʀᴇᴅɪᴛꜱ
+• <code>/add_credit</code> — ➕ ᴀᴅᴅ ᴄʀᴇᴅɪᴛs ᴛᴏ ᴀ ᴜsᴇʀ
 
-• <code>/credit_stats</code> — 📊 ᴠɪᴇᴡ ᴄʀᴇᴅɪᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
+• <code>/rem_credit</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴄʀᴇᴅs ғʀᴏᴍ ᴀ ᴜsᴇʀ
 
----
+• <code>/list_credit_users</code> — 📋 ᴠɪᴇᴡ ᴄʀᴇᴅɪᴛ ᴜsᴇʀs
 
-### 👑 ᴘʀᴇᴍɪᴜᴍ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+• <code>/token_panel</code> — 🎟️ ᴏᴘᴇɴ ᴛᴏᴋᴇɴ ᴘᴀɴᴇʟ
 
-• <code>/add_premium USER_ID</code> — 👑 ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
+• <code>/setting</code> — ⚙️ ᴏᴘᴇɴ sʏsᴛᴇᴍ sᴇᴛᴛɪɴɢs
 
-• <code>/rem_premium_user USER_ID</code> — ❌ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
-
-• <code>/list_premium</code> — 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ
+• <code>/status</code> — 📊 ᴠɪᴇᴡ ᴀᴄᴄᴇss sʏsᴛᴇᴍ sᴛᴀᴛᴜs
 
 ---
 
-### 🔗 ꜱʜᴏʀᴛᴇɴᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+### 🔗 sʜᴏʀᴛᴇɴᴇʀ sʏsᴛᴇᴍ
 
-• <code>/add_shortener</code> — ➕ ᴀᴅᴅ ᴀ ꜱʜᴏʀᴛᴇɴᴇʀ
+• <code>/shortener</code> — 🔗 ᴏᴘᴇɴ sʜᴏʀᴛᴇɴᴇʀ sʏsᴛᴇᴍ
 
-• <code>/rem_shortener ID</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀ ꜱʜᴏʀᴛᴇɴᴇʀ
+• <code>/shortener_panel</code> — 🎛️ ᴏᴘᴇɴ sʜᴏʀᴛᴇɴᴇʀ ᴘᴀɴᴇʟ
 
-• <code>/toggle_shortener ID</code> — 🔄 ᴇɴᴀʙʟᴇ / ᴅɪꜱᴀʙʟᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
+• <code>/add_shortener</code> — ➕ ᴀᴅᴅ ᴀ sʜᴏʀᴛᴇɴᴇʀ
 
-• <code>/list_shorteners</code> — 📋 ᴠɪᴇᴡ ᴀᴄᴛɪᴠᴇ ꜱʜᴏʀᴛᴇɴᴇʀꜱ
+• <code>/rem_shortener</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀ sʜᴏʀᴛᴇɴᴇʀ
 
----
+• <code>/toggle_shortener</code> — 🔄 ᴇɴᴀʙʟᴇ / ᴅɪsᴀʙʟᴇ sʜᴏʀᴛᴇɴᴇʀ
 
-### 📢 ʙʀᴏᴀᴅᴄᴀꜱᴛ
-
-• <code>/broadcast</code> — 📣 ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜꜱᴇʀꜱ
-
-• <code>/pbroadcast</code> — 📌 ʙʀᴏᴀᴅᴄᴀꜱᴛ & ᴘɪɴ ᴍᴇꜱꜱᴀɢᴇ
+• <code>/list_shorteners</code> — 📋 ᴠɪᴇᴡ ᴀᴄᴛɪᴠᴇ sʜᴏʀᴛᴇɴᴇʀs
 
 ---
 
-### 👥 ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
+### 👑 ᴘʀᴇᴍɪᴜᴍ sʏsᴛᴇᴍ
 
-• <code>/users</code> — 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ
+• <code>/premium_panel</code> — 👑 ᴏᴘᴇɴ ᴘʀᴇᴍɪᴜᴍ ᴘᴀɴᴇʟ
 
-• <code>/stats</code> — 📊 ᴠɪᴇᴡ ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
+• <code>/add_premium</code> — ➕ ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ
 
----
+• <code>/rem_premium</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ
 
-### 🚫 ᴜꜱᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
-
-• <code>/ban</code> — 🚫 ʙᴀɴ ᴀ ᴜꜱᴇʀ
-
-• <code>/unban</code> — ✅ ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ
+• <code>/premiumusers</code> — 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs
 
 ---
 
-### 📢 ғᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+### 📢 ʙʀᴏᴀᴅᴄᴀsᴛ & sᴛᴀᴛɪsᴛɪᴄs
 
-• <code>/addchnl</code> — ➕ ᴀᴅᴅ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟ
+• <code>/broadcast</code> — 📣 ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ
 
-• <code>/delchnl</code> — ➖ ʀᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟ
+• <code>/pbroadcast</code> — 📌 ʙʀᴏᴀᴅᴄᴀsᴛ & ᴘɪɴ ᴀ ᴍᴇssᴀɢᴇ
 
-• <code>/listchnl</code> — 📋 ᴠɪᴇᴡ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟꜱ
+• <code>/users</code> — 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜsᴇʀs
+
+• <code>/stats</code> — 📊 ᴠɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs
 
 ---
 
-### 👮 ᴀᴅᴍɪɴ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+### 🚫 ᴜsᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
 
-• <code>/add_admin</code> — ➕ ᴀᴅᴅ ᴀ ɴᴇᴡ ᴀᴅᴍɪɴ
+• <code>/ban</code> — 🚫 ʙᴀɴ ᴀ ᴜsᴇʀ
 
-• <code>/deladmin</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀɴ ᴀᴅᴍɪɴ
+• <code>/unban</code> — ✅ ᴜɴʙᴀɴ ᴀ ᴜsᴇʀ
 
-• <code>/admins</code> — 👮 ᴠɪᴇᴡ ʙᴏᴛ ᴀᴅᴍɪɴꜱ
+---
 
-</details>
+### 🗄 ᴅᴀᴛᴀʙᴀsᴇ
 
-### ⚙️ ᴏᴛʜᴇʀ
+• <code>/db</code> — 🗄 ᴠɪᴇᴡ ᴅᴀᴛᴀʙᴀsᴇ sᴇᴛᴛɪɴɢs
 
-• <code>/commands</code> — 📜 ᴠɪᴇᴡ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs
+• <code>/adddb</code> — ➕ ᴀᴅᴅ ᴀ ᴅᴀᴛᴀʙᴀsᴇ
+
+• <code>/removedb</code> — ➖ ʀᴇᴍᴏᴠᴇ ᴀ ᴅᴀᴛᴀʙᴀsᴇ
 
 </details>
 
@@ -288,48 +277,29 @@
 <br><br>
 
 <pre>
-start - 🚀 ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
-profile - 👤 ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ
-request - 📩 ꜱᴇɴᴅ ᴀ ᴄᴏɴᴛᴇɴᴛ ʀᴇǫᴜᴇꜱᴛ
-credit - 💳 ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
-commands - 📜 ᴠɪᴇᴡ ᴄᴏᴍᴍᴀɴᴅꜱ
-
-batch - 📦 ᴄʀᴇᴀᴛᴇ ʙᴀᴛᴄʜ ʟɪɴᴋꜱ
-genlink - 🔗 ɢᴇɴᴇʀᴀᴛᴇ ғɪʟᴇ ʟɪɴᴋ
-nbatch - 📁 ᴄʀᴇᴀᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ʟɪɴᴋꜱ
-
-credit_settings - 🎛️ ᴏᴘᴇɴ ᴄʀᴇᴅɪᴛ ꜱᴇᴛᴛɪɴɢꜱ
-add_credit - ➕ ᴀᴅᴅ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
-rem_credit - ➖ ʀᴇᴍᴏᴠᴇ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
-user_credit - 👤 ᴄʜᴇᴄᴋ ᴜꜱᴇʀ ᴄʀᴇᴅɪᴛꜱ
-credit_stats - 📊 ᴄʀᴇᴅɪᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
-
-add_premium - 👑 ᴀᴅᴅ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ
-rem_premium_user - ❌ ʀᴇᴍᴏᴠᴇ ᴘʀᴇᴍɪᴜᴍ
-list_premium - 📋 ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ
-
-add_shortener - ➕ ᴀᴅᴅ ꜱʜᴏʀᴛᴇɴᴇʀ
-rem_shortener - ➖ ʀᴇᴍᴏᴠᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
-toggle_shortener - 🔄 ᴛᴏɢɢʟᴇ ꜱʜᴏʀᴛᴇɴᴇʀ
-list_shorteners - 📋 ᴠɪᴇᴡ ꜱʜᴏʀᴛᴇɴᴇʀꜱ
-
-broadcast - 📣 ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴍᴇꜱꜱᴀɢᴇ
-pbroadcast - 📌 ʙʀᴏᴀᴅᴄᴀꜱᴛ & ᴘɪɴ
-
-users - 👥 ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ
-stats - 📊 ʙᴏᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ
-
-ban - 🚫 ʙᴀɴ ᴀ ᴜꜱᴇʀ
-unban - ✅ ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ
-
-addchnl - ➕ ᴀᴅᴅ ғᴏʀᴄᴇ ꜱᴜʙ
-delchnl - ➖ ʀᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ ꜱᴜʙ
-listchnl - 📋 ᴠɪᴇᴡ ғᴏʀᴄᴇ ꜱᴜʙꜱ
-
-add_admin - ➕ ᴀᴅᴅ ᴀᴅᴍɪɴ
-deladmin - ➖ ʀᴇᴍᴏᴠᴇ ᴀᴅᴍɪɴ
-admins - 👮 ᴠɪᴇᴡ ᴀᴅᴍɪɴꜱ
-</pre>
+start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
+request - sᴇɴᴅ ᴀ ʀᴇǫᴜᴇsᴛ
+profile - ᴠɪᴇᴡ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ
+genlink - ɢᴇɴᴇʀᴀᴛᴇ ғɪʟᴇ ʟɪɴᴋ
+batch - ᴄʀᴇᴀᴛᴇ ʙᴀᴛᴄʜ ʟɪɴᴋ
+nbatch - ᴄʀᴇᴀᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ʟɪɴᴋs
+panel - ᴏᴘᴇɴ ᴀᴄᴄᴇss ᴘᴀɴᴇʟ
+credit_panel - ᴏᴘᴇɴ ᴄʀᴇᴅɪᴛ ᴘᴀɴᴇʟ
+credit_status - ᴄʜᴇᴄᴋ ᴄʀᴇᴅɪᴛ sᴛᴀᴛᴜs
+token_panel - ᴏᴘᴇɴ ᴛᴏᴋᴇɴ ᴘᴀɴᴇʟ
+status - ᴠɪᴇᴡ ᴀᴄᴄᴇss sᴛᴀᴛᴜs
+shortener - ᴏᴘᴇɴ sʜᴏʀᴛᴇɴᴇʀ
+shortener_panel - ᴏᴘᴇɴ sʜᴏʀᴛᴇɴᴇʀ ᴘᴀɴᴇʟ
+list_shorteners - ᴠɪᴇᴡ sʜᴏʀᴛᴇɴᴇʀs
+premium_panel - ᴏᴘᴇɴ ᴘʀᴇᴍɪᴜᴍ ᴘᴀɴᴇʟ
+premiumusers - ᴠɪᴇᴡ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs
+broadcast - ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ
+pbroadcast - ʙʀᴏᴀᴅᴄᴀsᴛ & ᴘɪɴ
+users - ᴠɪᴇᴡ ᴛᴏᴛᴀʟ ᴜsᴇʀs
+stats - ᴠɪᴇᴡ ʙᴏᴛ sᴛᴀᴛs
+ban - ʙᴀɴ ᴀ ᴜsᴇʀ
+unban - ᴜɴʙᴀɴ ᴀ ᴜsᴇʀ
+db - ᴅᴀᴛᴀʙᴀsᴇ sᴇᴛᴛɪɴɢs
 
 <br>
 
