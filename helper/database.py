@@ -776,7 +776,7 @@ async def _set_access_mode(self,mode):
 async def _get_credit(self,uid):
     d=await self.user_data.find_one({'_id':uid}) or {}; return max(0,int(d.get('credit',0)))
 async def _change_credit(self,uid,amount,floor_zero=False):
-    cur=await self._get_credit(uid); new=cur+amount
+    cur=await _get_credit(self, uid); new=cur+amount
     if floor_zero: new=max(0,new)
     await self.user_data.update_one({'_id':uid},{'$set':{'credit':new}},upsert=True); return new
 async def _list_credit_users(self):
@@ -800,27 +800,3 @@ MongoDB.get_access_mode=_get_access_mode; MongoDB.set_access_mode=_set_access_mo
 MongoDB.get_credit=_get_credit; MongoDB.change_credit=_change_credit; MongoDB.list_credit_users=_list_credit_users
 MongoDB.create_pending_verification=_create_pending_verification; MongoDB.get_pending_verification=_get_pending_verification; MongoDB.consume_pending_verification=_consume_pending_verification
 MongoDB.set_token_access=_set_token_access; MongoDB.get_token_access=_get_token_access
-
-
-# ---- One-time verified file access grants ----
-async def _grant_file_access(self, uid, payload, minutes=10):
-    expires_at = datetime.now() + timedelta(minutes=max(1, int(minutes)))
-    await self.db['verified_file_access'].update_one(
-        {'user_id': uid, 'payload': payload},
-        {'$set': {'expires_at': expires_at, 'created_at': datetime.now()}},
-        upsert=True
-    )
-    return expires_at
-
-async def _has_file_access(self, uid, payload):
-    doc = await self.db['verified_file_access'].find_one({
-        'user_id': uid, 'payload': payload, 'expires_at': {'$gt': datetime.now()}
-    })
-    return bool(doc)
-
-async def _consume_file_access(self, uid, payload):
-    await self.db['verified_file_access'].delete_one({'user_id': uid, 'payload': payload})
-
-MongoDB.grant_file_access = _grant_file_access
-MongoDB.has_file_access = _has_file_access
-MongoDB.consume_file_access = _consume_file_access
