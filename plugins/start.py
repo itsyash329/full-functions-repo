@@ -268,16 +268,20 @@ async def start_command(
             # ===================================================
 
             elapsed = (
+
                 datetime.now()
                 - pending["created_at"]
+
             ).total_seconds()
 
 
             if elapsed < int(
+
                 settings.get(
                     "min_verify_seconds",
                     0
                 )
+
             ):
 
                 await client.mongodb.consume_pending_verification(
@@ -332,10 +336,12 @@ async def start_command(
             if kind == "token":
 
                 token_hours = int(
+
                     settings.get(
                         "token_hours",
                         24
                     )
+
                 )
 
 
@@ -348,9 +354,11 @@ async def start_command(
 
 
                 hour_text = (
+
                     "hour"
                     if token_hours == 1
                     else "hours"
+
                 )
 
 
@@ -415,9 +423,11 @@ async def start_command(
 
 
                 credit_text = (
+
                     "credit"
                     if credit_reward == 1
                     else "credits"
+
                 )
 
 
@@ -465,8 +475,10 @@ async def start_command(
         # =======================================================
 
         if (
+
             not is_user_pro
             and user_id != OWNER_ID
+
         ):
 
 
@@ -482,9 +494,15 @@ async def start_command(
 
 
                 if (
+
                     not until
                     or until <= datetime.now()
+
                 ):
+
+                    # ===========================================
+                    # CREATE TOKEN VERIFICATION
+                    # ===========================================
 
                     pending = await client.mongodb.create_pending_verification(
 
@@ -495,7 +513,11 @@ async def start_command(
                     )
 
 
-                    url = (
+                    # ===========================================
+                    # CREATE TELEGRAM VERIFICATION DESTINATION
+                    # ===========================================
+
+                    destination = (
 
                         f"https://t.me/{client.username}"
                         f"?start=token_{pending['_id']}"
@@ -503,11 +525,65 @@ async def start_command(
                     )
 
 
+                    # ===========================================
+                    # GENERATE SHORTENER LINK
+                    #
+                    # FIX:
+                    # Previously Token Mode directly sent the
+                    # Telegram verification URL.
+                    # Now it passes the destination through
+                    # the configured shortener system.
+                    # ===========================================
+
+                    short_link = get_short(
+
+                        destination,
+                        client
+
+                    )
+
+
+                    # ===========================================
+                    # SHORTENER FAILED
+                    # ===========================================
+
+                    if not short_link:
+
+                        client.LOGGER(
+
+                            __name__,
+                            client.name
+
+                        ).warning(
+
+                            "Failed to generate token "
+                            "verification short link."
+
+                        )
+
+
+                        return await message.reply(
+
+                            """
+⚠️ <b>ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ʟɪɴᴋ ᴄᴏᴜʟᴅ ɴᴏᴛ ʙᴇ ɢᴇɴᴇʀᴀᴛᴇᴅ.</b>
+
+<blockquote>
+🔗 ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.
+</blockquote>
+"""
+
+                        )
+
+
+                    # ===========================================
+                    # SHOW SHORTENER ACCESS SCREEN
+                    # ===========================================
+
                     return await send_access_screen(
 
                         client,
                         message,
-                        url
+                        short_link
 
                     )
 
