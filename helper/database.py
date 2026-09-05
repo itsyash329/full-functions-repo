@@ -786,7 +786,7 @@ async def _create_pending_verification(self,uid,payload,kind):
     import secrets
     existing=await self.db['pending_verifications'].find_one({'user_id':uid,'payload':payload,'kind':kind,'expires_at':{'$gt':datetime.now()}})
     if existing:return existing
-    s=await self._get_access_settings(); token=secrets.token_urlsafe(8).replace('-','').replace('_','')[:10]
+    s=await self.get_access_settings(); token=secrets.token_urlsafe(8).replace('-','').replace('_','')[:10]
     exp=datetime.now()+timedelta(minutes=int(s['shortener_expiry']))
     d={'_id':token,'user_id':uid,'payload':payload,'kind':kind,'created_at':datetime.now(),'expires_at':exp,'verified':False}
     await self.db['pending_verifications'].insert_one(d); return d
