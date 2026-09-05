@@ -2,12 +2,46 @@ from helper.helper_func import *
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import humanize
-from config import MSG_EFFECT, OWNER_ID
+from config import MSG_EFFECT, OWNER_ID, SHORT_TUT
 from plugins.shortner import get_short
 from helper.helper_func import get_messages, force_sub, decode, batch_auto_del_notification
 import asyncio
 
 #===============================================================#
+# ===============================================================
+# Access Screen
+# ===============================================================
+async def send_access_screen(client, message, open_url):
+    """Send the configured secure-access screen used by all access modes."""
+    caption = client.messages.get("SHORT_MSG", "🔐 Secure access has been enabled.")
+    photo = client.messages.get("SHORT_PIC", client.messages.get("SHORT", ""))
+    tutorial_url = getattr(client, "tutorial_link", None) or SHORT_TUT
+    premium_url = getattr(client, "premium_url", None) or "https://t.me/LustyDormNeT"
+
+    buttons = [[InlineKeyboardButton("• OPEN LINK •", url=open_url)]]
+    if tutorial_url:
+        buttons[0].append(InlineKeyboardButton("• TUTORIAL •", url=tutorial_url))
+    if premium_url:
+        buttons.append([InlineKeyboardButton("• BUY PREMIUM •", url=premium_url)])
+
+    markup = InlineKeyboardMarkup(buttons)
+
+    if photo:
+        try:
+            return await client.send_photo(
+                chat_id=message.chat.id,
+                photo=photo,
+                caption=caption,
+                reply_markup=markup,
+                message_effect_id=MSG_EFFECT
+            )
+        except Exception as e:
+            client.LOGGER(__name__, client.name).warning(f"Access screen photo failed: {e}")
+
+    return await message.reply(
+        caption,
+        reply_markup=markup
+    )
 
 @Client.on_message(filters.command('start') & filters.private)
 @force_sub
@@ -51,54 +85,27 @@ async def start_command(client: Client, message: Message):
         if base64_string.startswith("verify_") or base64_string.startswith("earn_") or base64_string.startswith("token_"):
             kind, verify_token = base64_string.split("_", 1)
             pending = await client.mongodb.get_pending_verification(verify_token)
-            now = __import__("datetime").datetime.now()
-            if (not pending or pending.get("user_id") != user_id or
-                    pending.get("expires_at") <= now or pending.get("verified")):
-                return await message.reply("⚠️ This verification link is invalid, expired, already used, or belongs to another user.")
-
+            if not pending or pending.get("user_id") != user_id or pending.get("expires_at") <= __import__("datetime").datetime.now():
+                return await message.reply("⚠️ This verification link is invalid, expired, or belongs to another user.")
             settings = await client.mongodb.get_access_settings()
-            elapsed = (now - pending["created_at"]).total_seconds()
+            elapsed = (__import__("datetime").datetime.now() - pending["created_at"]).total_seconds()
             if elapsed < int(settings.get("min_verify_seconds", 0)):
                 await client.mongodb.consume_pending_verification(verify_token)
-                return await message.reply("⚠️ Verification was completed too quickly. Please try again normally.")
-
+                await message.reply("⚠️ Uncertain activity detected. Your verification was revoked. Please verify again normally.")
+                try: await client.send_message(client.owner, f"🚨 Suspicious verification\nUser: {user_id}\nTime: {elapsed:.1f}s\nAction: revoked")
+                except Exception: pass
+                return
             await client.mongodb.consume_pending_verification(verify_token)
-            payload = pending.get("payload", "")
-            file_url = f"https://t.me/{client.username}?start={payload}" if payload else None
-
             if kind == "token":
                 await client.mongodb.set_token_access(user_id, int(settings["token_hours"]))
-                buttons = [[InlineKeyboardButton("📥 GET FILE", url=file_url)]] if file_url else None
-                return await message.reply(
-                    "<blockquote>🔐 Secure access has been enabled.</blockquote>\n"
-                    "<blockquote>📥 Click the button below to receive your file.</blockquote>\n"
-                    "✦ Please allow a moment for the system to respond.\n"
-                    "<blockquote>⍟ Reopen the link if you receive an error.</blockquote>",
-                    reply_markup=InlineKeyboardMarkup(buttons) if buttons else None
-                )
-
+                return await message.reply(f"✅ Token verified! You now have access for {settings['token_hours']} hour(s).")
             if kind == "earn":
                 if await client.mongodb.get_credit(user_id) != 0:
                     return await message.reply("⚠️ Use your existing credits before earning more free credits.")
                 bal = await client.mongodb.change_credit(user_id, int(settings["credit_reward"]))
-                buttons = [[InlineKeyboardButton("📥 GET FILE", url=file_url)]] if file_url else None
-                return await message.reply(
-                    f"<blockquote>💳 Credit access has been enabled.</blockquote>\n"
-                    f"<blockquote>🎁 You earned {settings['credit_reward']} credit(s). Balance: {bal}</blockquote>\n"
-                    "✦ Click the button below to receive your file.",
-                    reply_markup=InlineKeyboardMarkup(buttons) if buttons else None
-                )
-
-            # Shortener verification: grant this exact payload one-time access, then show GET FILE.
-            await client.mongodb.grant_file_access(user_id, payload, int(settings.get("shortener_expiry", 10)))
-            buttons = [[InlineKeyboardButton("📥 GET FILE", url=file_url)]] if file_url else None
-            return await message.reply(
-                "<blockquote>🔐 Secure access has been enabled.</blockquote>\n"
-                "<blockquote>📥 Click the button below to receive your file.</blockquote>\n"
-                "✦ Please allow a moment for the system to respond.\n"
-                "<blockquote>⍟ Reopen the link if you receive an error.</blockquote>",
-                reply_markup=InlineKeyboardMarkup(buttons) if buttons else None
-            )
+                return await message.reply(f"✅ Verification complete! You earned {settings['credit_reward']} credit(s). Balance: {bal}")
+            # verify_ shortener callback: continue using original payload
+            base64_string = pending["payload"]
 
         # 3. Premium always bypasses every mode.
         is_user_pro = await client.mongodb.is_pro(user_id)
@@ -112,7 +119,7 @@ async def start_command(client: Client, message: Message):
                 if not until or until <= __import__("datetime").datetime.now():
                     pending = await client.mongodb.create_pending_verification(user_id, base64_string, "token")
                     url = f"https://t.me/{client.username}?start=token_{pending['_id']}"
-                    return await message.reply("🎟 Token verification required.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎟 VERIFY TOKEN", url=url)]]))
+                    return await send_access_screen(client, message, url)
 
             # CREDIT: deduct configured price per requested content. Free earning is only available at zero balance.
             elif mode == "credit":
@@ -122,35 +129,19 @@ async def start_command(client: Client, message: Message):
                     if balance == 0:
                         pending = await client.mongodb.create_pending_verification(user_id, base64_string, "earn")
                         short_link = get_short(f"https://t.me/{client.username}?start=earn_{pending['_id']}", client)
-                        return await message.reply(f"💳 You need {price} credit(s). Earn credits first.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔗 EARN CREDITS", url=short_link)]]))
+                        return await send_access_screen(client, message, short_link)
                     return await message.reply(f"💳 Insufficient credits. You have {balance}, but this content costs {price}. Use /credit_status to purchase more.")
                 await client.mongodb.change_credit(user_id, -price, floor_zero=True)
 
-            # SHORTENER: verified users receive a one-time grant for this exact file payload.
+            # SHORTENER: every file request requires its own verification; same pending link survives until expiry.
             elif mode == "shortener" and not is_short_link:
-                verified = await client.mongodb.has_file_access(user_id, base64_string)
-                if verified:
-                    await client.mongodb.consume_file_access(user_id, base64_string)
-                else:
-                    pending = await client.mongodb.create_pending_verification(user_id, base64_string, "shortener")
-                    short_link = pending.get("short_url")
-                    if not short_link:
-                        destination = f"https://t.me/{client.username}?start=verify_{pending['_id']}"
-                        short_link = get_short(destination, client)
-                        await client.mongodb.db['pending_verifications'].update_one(
-                            {'_id': pending['_id']}, {'$set': {'short_url': short_link}}
-                        )
-                    tutorial_link = getattr(client, 'tutorial_link', "")
-                    buttons = [[InlineKeyboardButton("• OPEN LINK •", url=short_link)]]
-                    if tutorial_link:
-                        buttons.append([InlineKeyboardButton("• TUTORIAL •", url=tutorial_link)])
-                    return await message.reply(
-                        "<blockquote>🔗 Secure verification is required.</blockquote>\n"
-                        "<blockquote>📥 Open the link below to unlock your file.</blockquote>\n"
-                        "✦ Please allow a moment for the system to respond.\n"
-                        "<blockquote>⍟ Reopen the link if you receive an error.</blockquote>",
-                        reply_markup=InlineKeyboardMarkup(buttons)
-                    )
+                pending = await client.mongodb.create_pending_verification(user_id, base64_string, "shortener")
+                short_link = pending.get("short_url")
+                if not short_link:
+                    destination = f"https://t.me/{client.username}?start=verify_{pending['_id']}"
+                    short_link = get_short(destination, client)
+                    await client.mongodb.db['pending_verifications'].update_one({'_id': pending['_id']}, {'$set': {'short_url': short_link}})
+                return await send_access_screen(client, message, short_link)
 
         # 6. Decode and prepare file IDs
         try:
