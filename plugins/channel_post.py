@@ -7,14 +7,100 @@ from helper.helper_func import encode
 #===============================================================#
 
 BOT_COMMANDS = [
-    'start', 'shortner', 'shortener_panel', 'users', 'broadcast', 'batch', 'genlink',
-    'stats', 'pbroadcast', 'db', 'adddb', 'add_db', 'removedb', 'rm_db', 'ban', 'unban',
-    'addpremium', 'delpremium', 'premiumusers', 'request', 'profile',
-    # Access system commands
-    'panel', 'credit_panel', 'add_credit', 'rem_credit', 'list_credit_users',
-    'credit_status', 'token_panel', 'setting', 'status',
-    # Reserved for the premium panel when enabled
-    'premium_panel'
+
+    # ===========================================================
+    # USER COMMANDS
+    # ===========================================================
+    "start",
+    "request",
+    "profile",
+
+
+    # ===========================================================
+    # FILE LINK GENERATOR
+    # ===========================================================
+    "batch",
+    "genlink",
+    "nbatch",
+
+
+    # ===========================================================
+    # STATISTICS & BROADCAST
+    # ===========================================================
+    "stats",
+    "users",
+    "broadcast",
+    "pbroadcast",
+
+
+    # ===========================================================
+    # ACCESS SYSTEM
+    # ===========================================================
+    "panel",
+    "credit_panel",
+    "add_credit",
+    "rem_credit",
+    "credit_status",
+    "list_credit_users",
+    "token_panel",
+    "setting",
+    "status",
+
+
+    # Access system aliases
+    "access_panel",
+    "access",
+    "access_system",
+
+
+    # ===========================================================
+    # PREMIUM SYSTEM
+    # ===========================================================
+    "addpremium",
+    "delpremium",
+    "premiumusers",
+    "premium_panel",
+
+
+    # Premium aliases
+    "add_premium",
+    "rem_premium",
+    "remove_premium",
+
+
+    # ===========================================================
+    # SHORTENER SYSTEM
+    # ===========================================================
+    "shortner",
+    "shortener",
+    "shortener_panel",
+    "shortner_panel",
+
+    "list_shorteners",
+    "toggle_shortener",
+    "rem_shortener",
+
+    "add_shortener",
+    "add_shortner",
+
+
+    # ===========================================================
+    # DATABASE MANAGEMENT
+    # ===========================================================
+    "db",
+
+    "adddb",
+    "add_db",
+
+    "removedb",
+    "rm_db",
+
+
+    # ===========================================================
+    # USER MANAGEMENT
+    # ===========================================================
+    "ban",
+    "unban"
 ]
 
 @Client.on_message(filters.private & ~filters.command(BOT_COMMANDS))
@@ -65,8 +151,3 @@ async def new_post(client: Client, message: Message):
         print(e)
 
         pass
-
-
-
-
-
